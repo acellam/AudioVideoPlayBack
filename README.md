@@ -32,7 +32,7 @@
 ## More information:
 * [Flockofbirds.org](http://flockofbirds.org/)
 * [jPlayer.org](http://jplayer.org/)
-* [Quick Start Guide](http://www.jplayer.org/latest/quick-start-guide/)
+* [Quick Start Guide](https://www.youtube.com/watch?v=Vf78fTj4S2M)
 * [Developer Guide and API Reference](http://www.jplayer.org/latest/developer-guide/)
 
 ## Author:
