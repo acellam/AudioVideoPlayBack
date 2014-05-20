@@ -57,5 +57,5 @@ We have also added support to play media from absolute URL and video Embedded UR
 
 ## Author:
 Acellam Guy [@mistaguy](http://twitter.com/mistaguy)
-[mistaguy.com](http://mistaguy.com/)
+[mistaguy.com](http://mistaguy.com/) and 
 Andriers Smit (https://github.com/Andries-Smit)
