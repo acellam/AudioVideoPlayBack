@@ -3,7 +3,7 @@
 
 ## What is AudioVideoPlayBack ?
 
-### AudioVideoPlayBack is a [Mendix](http://mendix.com) widget built on top of [Jplayer ](http://jplayer.org/). This repository is a sample mendix app on Mx 5.3.2. The widget allows you to:
+### AudioVideoPlayBack is a [Mendix](http://mendix.com) widget built on top of [Jplayer ](http://jplayer.org/). The widget allows you to:
 * **play and control media** files in your mendix app.
 * create a **consistent interface** and experience across all browsers.
 * add **audio** and **video** to your mendix projects.
@@ -34,8 +34,3 @@
 * [jPlayer.org](http://jplayer.org/)
 * [Quick Start Guide](https://www.youtube.com/watch?v=Vf78fTj4S2M)
 * [Developer Guide and API Reference](http://www.jplayer.org/latest/developer-guide/)
-
-## Author:
-Acellam Guy [@mistaguy](http://twitter.com/mistaguy)
-[mistaguy.com](http://mistaguy.com/) and 
-Andriers Smit (https://github.com/Andries-Smit)
