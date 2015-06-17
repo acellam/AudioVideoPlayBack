@@ -21,7 +21,7 @@
 define([
     'dojo/_base/declare', 'mxui/widget/_WidgetBase', 'dijit/_TemplatedMixin',
     'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-prop', 'dojo/dom-geometry', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/_base/array', 'dojo/_base/lang', 'dojo/text', 'dojo/html', 'dojo/_base/event',
-    'AudioVideoPlayback/lib/jquery-1.11.2.min', 'dojo/text!AudioVideoPlayback/widget/template/playback.html','AudioVideoPlayback/lib/jQueryjPlayer/jqueryJplayerMin'
+    'AudioVideoPlayback/lib/jquery-1.11.2.min', 'dojo/text!AudioVideoPlayback/widget/template/playback.html','AudioVideoPlayback/lib/jQueryjPlayer/jquery.jplayer'
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, lang, text, html, event, _jQuery, widgetTemplate) {
     'use strict';
 
@@ -118,7 +118,7 @@ define([
                 },
                 cssSelectorAncestor: "#"+ this.id,
                 loop: this.loop,
-                swfPath: "/jQueryjPlayerSource",
+                swfPath: "../lib/jQueryjPlayer",
                supplied: "mp3,wav,ogg,wma,ogg,au,vox,raw,m4a"
             });
         },
@@ -142,7 +142,7 @@ define([
                 fullScreen: this.fullScreen,
                 fullWindow: this.fullScreen,
                 loop: this.loop,
-                swfPath: "/jQueryjPlayerSource",
+                swfPath: "../lib/jQueryjPlayer",
                 supplied: "m4v,webm,flv,wmv,avi,vob,mp4,mov",
                 size: {
                     width: self.videoWidth + "px",
