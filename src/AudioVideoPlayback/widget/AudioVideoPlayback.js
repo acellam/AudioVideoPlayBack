@@ -196,7 +196,8 @@ define([
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
-            console.log(this.id + '.postCreate');
+            console.log(this.id + '.postCreate');           
+            
             this._updateRendering();
             this._setupEvents();
         },

@@ -5,7 +5,7 @@
     AudioVideoPlayback
     ========================
 
-    @file      : AudioVideoPlayback.js
+    @file      : AudioVideoPlaybackURL.js
     @version   : 3.0.0
     @author    : Acellam Guy
     @date      : Tue, 16 Jun 2015 10:16:07 GMT
@@ -21,14 +21,14 @@
 define([
     'dojo/_base/declare', 'mxui/widget/_WidgetBase', 'dijit/_TemplatedMixin',
     'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-prop', 'dojo/dom-geometry', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/_base/array', 'dojo/_base/lang', 'dojo/text', 'dojo/html', 'dojo/_base/event',
-    'AudioVideoPlayback/lib/jquery-1.11.2.min', 'dojo/text!AudioVideoPlayback/widget/template/playback.html','AudioVideoPlayback/lib/jQueryjPlayer/jqueryJplayerMin'
+    'AudioVideoPlayback/lib/jquery-1.11.2.min', 'dojo/text!AudioVideoPlayback/widget/template/playback.html','AudioVideoPlayback/lib/jQueryjPlayer/jquery.jplayer'
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, lang, text, html, event, _jQuery, widgetTemplate) {
     'use strict';
 
     //var $ = jQuery.noConflict(true);
     
     
-mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jplayer.blue.monday.css"));
+     mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jplayer.blue.monday.css"));
     mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/playback.css"));
     
     // Declare widget's prototype.
@@ -38,7 +38,7 @@ mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jpla
         templateString: widgetTemplate,
 
         // Parameters configured in the Modeler.
-        autoPlay: false,
+       autoPlay: false,
         loop: false,
         fullScreen: false,
         videoWidth: 640,
@@ -52,7 +52,7 @@ mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jpla
         showTime: true,
         showToggles: true,
         showFullScreenToggle: true,
-
+        
         // Internal variables. Non-primitives created in the prototype are shared between all widget instances.
         _handles: null,
         _contextObj: null,
@@ -66,109 +66,115 @@ mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jpla
         constructor: function () {
             this._handles = [];
         },
-        choosePlayer: function (context, ext) {
-            if (ext === "mp3" || ext === "wma" || ext === "m4a"  || ext === "wav"|| ext === "ogg"|| ext === "au"|| ext === "vox"|| ext === "raw"){
-                this.isAudio = true;
-                this.audio(context);
-            } else {
-                this.isAudio = false;
-                this.video(context);
-            }
-        },
-        audio: function (context) {
-            var self = this;
-            dojo.removeClass(this.jpPlayerUI, "jp-video");
-            dojo.addClass(this.jpPlayerUI, "jp-audio");
-            $(this.jpPlayer).jPlayer({
-                ready: function () {
-                    $(this).jPlayer("setMedia", {
-                        mp3: 'file?target=window&guid=' + context.trackId     
-                    });
-                    if (self.autoPlay) {
-                        $(this).jPlayer("play");
-                    }
-                },
-                cssSelectorAncestor: "#"+ this.id,
-                loop: this.loop,
-                swfPath: "/jQueryjPlayerSource",
-               supplied: "mp3,wav,ogg,wma,ogg,au,vox,raw,m4a"
-            });
-        },
-        video: function (context) {
-            var self = this;
-            dojo.removeClass(this.jpPlayerUI, "jp-audio");
-            dojo.addClass(this.jpPlayerUI, "jp-video");        
-            $(this.jpPlayer).jPlayer({
-                ready: function () {
-                    $(this).jPlayer("setMedia", {
-                        m4v: 'file?target=window&guid=' + context.trackId
-                    });
-                    if (self.autoPlay) {
-                        $(this).jPlayer("play");
-                    }
-                },
-                cssSelectorAncestor: "#"+ this.id,
-                fullScreen: this.fullScreen,
-                fullWindow: this.fullScreen,
-                loop: this.loop,
-                swfPath: "/jQueryjPlayerSource",
-                supplied: "m4v,webm,flv,wmv,avi,vob,mp4,mov",
-                size: {
-                    width: self.videoWidth + "px",
-                    height: self.videoHeigth + "px",
-                    cssClass: self.videoCssClass
-                },
-                smoothPlayBar: true,
-                keyEnabled: true
-            });
+        
+        choosePlayer: function (ext) {
+        if (ext === "mp3" || ext === "wma" || ext === "m4a"  || ext === "wav"|| ext === "ogg"|| ext === "au"|| ext === "vox"|| ext === "raw"){
+            this.isAudio = true;
+            this.audio();
+        } else {
+            this.isAudio = false;
+            this.video();
+        }
+    },
 
-        },
-        showHideControlls: function () {
-            if(!this.showUserInterface){
-                dojo.style(this.jpPlayerUI, "display", "none");            
-            }
-            if (!this.showPlayControl) {
-                dojo.style(this.jpPlay, "display", "none");
-                dojo.style(this.jpPause, "display", "none");
-                dojo.style(this.jpStop, "display", "none");
-            }
-            if (!this.showAudiocontrol) {
-                dojo.style(this.jpMute, "display", "none");
-                dojo.style(this.jpUnMute, "display", "none");
-                dojo.style(this.jpMaxValue, "display", "none");
-                dojo.style(this.jpVolume, "display", "none");
+    audio: function () {
+        var self = this;
+        dojo.removeClass(this.jpPlayerUI, "jp-video");
+        dojo.addClass(this.jpPlayerUI, "jp-audio");
+        $(this.jpPlayer).jPlayer({
+            ready: function () {
+                $(this).jPlayer("setMedia", {
+                     mp3: self.mediaURL   
+                });
+                if (self.autoPlay) {
+                    $(this).jPlayer("play");
+                }
+            },
+            cssSelectorAncestor: "#"+ this.id,
+            loop: this.loop,
+            swfPath: "../lib/jQueryjPlayer",
+            supplied: "mp3,wav,ogg,wma,ogg,au,vox,raw,m4a"
+        });
+    },
 
-            }
-            if (!this.showProgressBar) {
-                dojo.style(this.jpProgress, "display", "none");
-            }
-            if (!this.showTitle) {
-                dojo.style(this.jpTitle, "display", "none");
-            }
-            if (!this.showTime) {
-                dojo.style(this.jpTimeHolder, "display", "none");
-            }
-            if (!this.showToggles) {
-                dojo.style(this.jpToggles, "display", "none");
-            }         
-            if (!this.showFullScreenToggle || this.isAudio) {
-                dojo.style(this.jpFullScreen, "display", "none");
-                dojo.style(this.jpRestoreScreen, "display", "none");
-            } else if (this.showFullScreenToggle && ! this.isAudio){
-                dojo.style(this.jpFullScreen, "display", "");
-                dojo.style(this.jpRestoreScreen, "display", "");            
-            }
-            if(this.isAudio) {
-                dojo.style(this.jpVideoPlay, "display", "none");            
-            }
-        },
+    video: function () {
+        var self = this;
+        dojo.removeClass(this.jpPlayerUI, "jp-audio");
+        dojo.addClass(this.jpPlayerUI, "jp-video");        
+        $(this.jpPlayer).jPlayer({
+            ready: function () {
+                $(this).jPlayer("setMedia", {
+                    m4v: self.mediaURL
+                });
+                if (self.autoPlay) {
+                    $(this).jPlayer("play");
+                }
+            },
+            cssSelectorAncestor: "#"+ this.id,
+            fullScreen: this.fullScreen,
+            fullWindow: this.fullScreen,
+            loop: this.loop,
+            swfPath: "../lib/jQueryjPlayer",
+            supplied: "m4v,webm,flv,wmv,avi,vob,mp4,mov",
+            size: {
+                width: self.videoWidth + "px",
+                height: self.videoHeigth + "px",
+                cssClass: self.videoCssClass
+            },
+            smoothPlayBar: true,
+            keyEnabled: true
+        });
+
+    },
+
+    showHideControlls: function () {
+        if(!this.showUserInterface){
+           domStyle.set(this.jpPlayerUI, "display", "none");            
+        }
+        if (!this.showPlayControl) {
+           domStyle.set(this.jpPlay, "display", "none");
+           domStyle.set(this.jpPause, "display", "none");
+           domStyle.set(this.jpStop, "display", "none");
+        }
+        if (!this.showAudiocontrol) {
+           domStyle.set(this.jpMute, "display", "none");
+           domStyle.set(this.jpUnMute, "display", "none");
+           domStyle.set(this.jpMaxValue, "display", "none");
+           domStyle.set(this.jpVolume, "display", "none");
+
+        }
+        if (!this.showProgressBar) {
+           domStyle.set(this.jpProgress, "display", "none");
+        }
+        if (!this.showTitle) {
+           domStyle.set(this.jpTitle, "display", "none");
+        }
+        if (!this.showTime) {
+           domStyle.set(this.jpTimeHolder, "display", "none");
+        }
+        if (!this.showToggles) {
+           domStyle.set(this.jpToggles, "display", "none");
+        }         
+        if (!this.showFullScreenToggle || this.isAudio) {
+           domStyle.set(this.jpFullScreen, "display", "none");
+           domStyle.set(this.jpRestoreScreen, "display", "none");
+        } else if (this.showFullScreenToggle && ! this.isAudio){
+           domStyle.set(this.jpFullScreen, "display", "");
+           domStyle.set(this.jpRestoreScreen, "display", "");            
+        }
+        if(this.isAudio) {
+           domStyle.set(this.jpVideoPlay, "display", "none");            
+        }
+    },
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
             console.log(this.id + '.postCreate');
-            this._updateRendering();
-            this._setupEvents();
             
+            
+            
+            
+            this.actLoaded();
             //destroy if need be (allow shitching, between audio, video or deselecting)
             $(this.jpPlayer).jPlayer( "destroy" );
 
@@ -177,19 +183,22 @@ mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jpla
                 var fileName = this.mediaURL;
                 //file extension
                 var ext = fileName.substr(fileName.lastIndexOf('.') + 1);
-                dojo.style(this.jpPlayerUI, "display", "");  
-                dojo.style(this.jpPlayer, "display", "");  
+                domStyle.set(this.jpPlayerUI, "display", "");  
+                domStyle.set(this.jpPlayer, "display", "");  
                 this.choosePlayer(ext);
 
                 this.showHideControlls();
-                dojo.html.set(this.jpTitle,fileName);
+                html.set(this.jpTitle,fileName);
             }else{
                 // no context no player
-                dojo.style(this.jpPlayerUI, "display", "none"); 
-                dojo.style(this.jpPlayer, "display", "none"); 
+                domStyle.set(this.jpPlayerUI, "display", "none"); 
+                domStyle.set(this.jpPlayer, "display", "none"); 
             }
             
             
+            
+            this._updateRendering();
+            this._setupEvents();
             
         },
 
@@ -201,25 +210,6 @@ mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jpla
             this._resetSubscriptions();
             this._updateRendering();
 
-            //destroy if need be (allow shitching, between audio, video or deselecting)
-        $(this.jpPlayer).jPlayer( "destroy" );
-        
-        if (this._contextObj.trackObject) {
-            // file name
-            var fileName = this._contextObj.trackObject.get("Name");
-            //file extension
-            var ext = fileName.substr(fileName.lastIndexOf('.') + 1);
-            dojo.style(this.jpPlayerUI, "display", "");  
-            dojo.style(this.jpPlayer, "display", "");  
-            this.choosePlayer(this._contextObj, ext);
-        
-            this.showHideControlls();
-            dojo.html.set(this.jpTitle,fileName);
-        }else {
-            // no context no player
-            dojo.style(this.jpPlayerUI, "display", "none"); 
-            dojo.style(this.jpPlayer, "display", "none");   
-        }
 
             callback();
         },
