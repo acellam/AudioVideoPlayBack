@@ -10,7 +10,7 @@
     @author    : Acellam Guy
     @date      : Tue, 16 Jun 2015 10:16:07 GMT
     @copyright : Flock Of Birds
-    @license   : MIT
+    @license   : Apache 2.0 License
 
     Documentation
     ========================

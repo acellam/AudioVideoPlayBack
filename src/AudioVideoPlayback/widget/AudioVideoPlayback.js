@@ -10,7 +10,7 @@
     @author    : Acellam Guy
     @date      : Tue, 16 Jun 2015 10:16:07 GMT
     @copyright : Flock Of Birds
-    @license   : MIT
+    @license   : Apache 2.0 License
 
     Documentation
     ========================
@@ -25,7 +25,7 @@ define([
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, lang, text, html, event, _jQuery, widgetTemplate) {
     'use strict';
 
-    var $ = jQuery.noConflict(true);
+    //var $ = jQuery.noConflict(true);
     
     
     mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jplayer.blue.monday.css"));
@@ -78,8 +78,6 @@ define([
                 domStyle.set(this.jpPlayerUI, "display", "");  
                 domStyle.set(this.jpPlayer, "display", "");  
                 
-                console.info("Extension is:"+ext);
-                
                 this.choosePlayer(context, ext);
 
                 this.showHideControlls();
@@ -101,9 +99,7 @@ define([
             }
         },
         audio: function (context) {
-            
-           console.info("file guid:"+context.trackId);
-            
+                        
             var self = this;
             dojo.removeClass(this.jpPlayerUI, "jp-video");
             dojo.addClass(this.jpPlayerUI, "jp-audio");
@@ -124,8 +120,6 @@ define([
         },
         video: function (context) {
             var self = this;
-            
-             console.info("file guid:"+context.trackId);
             
             dojo.removeClass(this.jpPlayerUI, "jp-audio");
             dojo.addClass(this.jpPlayerUI, "jp-video");        
@@ -196,7 +190,6 @@ define([
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
-            console.log(this.id + '.postCreate');           
             
             this._updateRendering();
             this._setupEvents();
@@ -204,8 +197,6 @@ define([
 
         // mxui.widget._WidgetBase.update is called when context is changed or initialized. Implement to re-render and / or fetch data.
         update: function (obj, callback) {
-            console.log(this.id + '.update');
-
             this._contextObj = obj;
             this._resetSubscriptions();
             this._updateRendering();

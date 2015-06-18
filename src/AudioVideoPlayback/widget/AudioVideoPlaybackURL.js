@@ -10,7 +10,7 @@
     @author    : Acellam Guy
     @date      : Tue, 16 Jun 2015 10:16:07 GMT
     @copyright : Flock Of Birds
-    @license   : MIT
+    @license   : Apache 2.0 License
 
     Documentation
     ========================
@@ -24,9 +24,6 @@ define([
     'AudioVideoPlayback/lib/jquery-1.11.2.min', 'dojo/text!AudioVideoPlayback/widget/template/playback.html','AudioVideoPlayback/lib/jQueryjPlayer/jquery.jplayer'
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, lang, text, html, event, _jQuery, widgetTemplate) {
     'use strict';
-
-    //var $ = jQuery.noConflict(true);
-    
     
      mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/blue.monday/jplayer.blue.monday.css"));
     mxui.dom.addCss(dojo.moduleUrl("AudioVideoPlayback", "widget/ui/playback.css"));
@@ -169,10 +166,6 @@ define([
 
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
-            console.log(this.id + '.postCreate');
-            
-            
-            
             
             this.actLoaded();
             //destroy if need be (allow shitching, between audio, video or deselecting)
@@ -204,8 +197,6 @@ define([
 
         // mxui.widget._WidgetBase.update is called when context is changed or initialized. Implement to re-render and / or fetch data.
         update: function (obj, callback) {
-            console.log(this.id + '.update');
-
             this._contextObj = obj;
             this._resetSubscriptions();
             this._updateRendering();
