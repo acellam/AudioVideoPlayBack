@@ -21,7 +21,7 @@
 define([
     'dojo/_base/declare', 'mxui/widget/_WidgetBase', 'dijit/_TemplatedMixin',
     'mxui/dom', 'dojo/dom', 'dojo/query', 'dojo/dom-prop', 'dojo/dom-geometry', 'dojo/dom-class', 'dojo/dom-style', 'dojo/dom-construct', 'dojo/_base/array', 'dojo/_base/lang', 'dojo/text', 'dojo/html', 'dojo/_base/event',
-    'AudioVideoPlayback/lib/jquery-1.11.2.min', 'dojo/text!AudioVideoPlayback/widget/template/Embed.html','AudioVideoPlayback/lib/jQueryjPlayer/jqueryJplayerMin'
+    'AudioVideoPlayback/lib/jquery-1.11.2', 'dojo/text!AudioVideoPlayback/widget/template/Embed.html','AudioVideoPlayback/lib/jQueryjPlayer/jquery.jplayer.min'
 ], function (declare, _WidgetBase, _TemplatedMixin, dom, dojoDom, domQuery, domProp, domGeom, domClass, domStyle, domConstruct, dojoArray, lang, text, html, event, _jQuery, widgetTemplate) {
     'use strict';
 
