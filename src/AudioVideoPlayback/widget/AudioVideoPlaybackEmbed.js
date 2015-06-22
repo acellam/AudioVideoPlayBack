@@ -5,8 +5,8 @@
     AudioVideoPlayback
     ========================
 
-    @file      : AudioVideoPlayback.js
-    @version   : 3.0.0
+    @file      : AudioVideoPlaybackEmbed.js
+    @version   : 3.0.1
     @author    : Acellam Guy
     @date      : Tue, 16 Jun 2015 10:16:07 GMT
     @copyright : Flock Of Birds

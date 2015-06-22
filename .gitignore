@@ -1,5 +1,6 @@
 test/javasource/
 test/deployment/
+test/releases/
 test/.classpath
 test/.project
 *.launch
