@@ -6,9 +6,9 @@
  ========================
  
  @file      : AudioVideoPlayback.js
- @version   : 4.3.0
+ @version   : 3.1.0
  @author    : Andries Smit, Acellam Guy
- @date      : Tue, 16 Jun 2015 10:16:07 GMT
+ @date      : Mon, 23 Nov 2015 17:17:00 GMT
  @copyright : Flock Of Birds
  @license   : Apache 2.0 License
  
