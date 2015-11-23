@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="AudioVideoPlayback.widget.AudioVideoPlaybackRemoteFile" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../../xsd/widget.xsd">
+    <name>Audio Video Playback RemoteFile</name>
+    <description>Audio Video Playback URL</description>
+    <icon>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</icon>
+    <properties>                
+        <property key="showUserInterface" type="boolean" defaultValue="true">
+            <caption>Show User Interface</caption>
+            <category>Behaviour</category>
+            <description></description>
+        </property>
+        <property key="autoPlay" type="boolean" defaultValue="false">
+            <caption>Auto Play</caption>
+            <category>Behaviour</category>
+            <description>Automatic Start play file when loaded</description>
+        </property>
+        <property key="fullScreen" type="boolean" defaultValue="false">
+            <caption>Start Full Screen</caption>
+            <category>Behaviour</category>
+            <description>Start in full screen (video only)</description>
+        </property>
+                 
+        <property key="loop" type="boolean" defaultValue="false">
+            <caption>Loop</caption>
+            <category>Behaviour</category>
+            <description>restart when finished playing file</description>
+        </property>
+        <property key="videoWidth" type="integer" defaultValue="640">
+            <caption>Width</caption>
+            <category>Video</category>
+            <description>Width of the video in pixels</description>
+        </property>
+        <property key="videoHeigth" type="integer" defaultValue="360">
+            <caption>Height</caption>
+            <category>Video</category>
+            <description>Height of the video in pixels</description>
+        </property>
+        <property key="videoCssClass" type="string" defaultValue="jp-video-360p">
+            <caption>Css Class</caption>
+            <category>Video</category>
+            <description>Theme CSS class</description>
+        </property>
+        <property key="showPlayControl" type="boolean" defaultValue="true">
+            <caption>Play control</caption>
+            <category>Display</category>
+            <description></description>
+        </property>
+        <property key="showAudiocontrol" type="boolean" defaultValue="true">
+            <caption>Audio control</caption>
+            <category>Display</category>
+            <description></description>
+        </property>
+        <property key="showProgressBar" type="boolean" defaultValue="true">
+            <caption>Progress bar</caption>
+            <category>Display</category>
+            <description></description>
+        </property>
+        <property key="showTitle" type="boolean" defaultValue="true">
+            <caption>Title</caption>
+            <category>Display</category>
+            <description></description>
+        </property>
+        <property key="showTime" type="boolean" defaultValue="true">
+            <caption>Time</caption>
+            <category>Display</category>
+            <description></description>
+        </property>                
+        <property key="showToggles" type="boolean" defaultValue="true">
+            <caption>Toggles</caption>
+            <category>Display</category>
+            <description></description>
+        </property>   
+        <property key="mediaURLattr" type="attribute" required="true">
+            <caption>Attribute Media URL</caption>
+            <category>URL</category>
+            <description>The attribute containing the media absolute  URL of the video. Use the Embed Video for youtube and vimeo,etc</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+        <property key="showFullScreenToggle" type="boolean" defaultValue="true">
+            <caption>Enable Full screen</caption>
+            <category>Display</category>
+            <description></description>
+        </property>
+    </properties>
+</widget>

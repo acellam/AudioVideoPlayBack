@@ -5,6 +5,7 @@
 			<widgetFile path="AudioVideoPlayback/AudioVideoPlayback.xml"/>      
             <widgetFile path="AudioVideoPlayback/AudioVideoPlaybackURL.xml"/>  
             <widgetFile path="AudioVideoPlayback/AudioVideoPlaybackEmbed.xml"/>  
+            <widgetFile path="AudioVideoPlayback/AudioVideoPlaybackRemoteFile.xml"/>  
 		</widgetFiles>
 		<files>
 			<file path="AudioVideoPlayback/widget/"/>
