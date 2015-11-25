@@ -19,9 +19,9 @@
 
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
 define([
-    "dojo/_base/declare", "mxui/widget/_WidgetBase", "dijit/_TemplatedMixin", "mendix/logger",
+    "dojo/_base/declare", "mxui/widget/_WidgetBase", "dijit/_TemplatedMixin", 
     "dojo/text!AudioVideoPlayback/widget/template/Embed.html"
-], function (declare, _WidgetBase, _TemplatedMixin, logger, widgetTemplate) {
+], function (declare, _WidgetBase, _TemplatedMixin, widgetTemplate) {
     "use strict";
 
     // Declare widget"s prototype.
@@ -39,7 +39,7 @@ define([
         },
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
-            logger.debug(this.id + ".postCreate");
+            //console.log(this.id + ".postCreate");
             this._updateRendering();
         },
         _updateRendering: function () {

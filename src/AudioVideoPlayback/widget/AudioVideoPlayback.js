@@ -20,9 +20,9 @@
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
 define([
     "dojo/_base/declare", "mxui/widget/_WidgetBase", "dijit/_TemplatedMixin",
-    "dojo/dom-class", "dojo/dom-style", "dojo/_base/lang", "dojo/html", "mendix/logger",
+    "dojo/dom-class", "dojo/dom-style", "dojo/_base/lang", "dojo/html",
     "AudioVideoPlayback/lib/jquery-1.11.2", "dojo/text!AudioVideoPlayback/widget/template/playback.html", "AudioVideoPlayback/lib/jQueryjPlayer/jquery.jplayer.min"
-], function (declare, _WidgetBase, _TemplatedMixin, domClass, domStyle, lang, html, logger, _jQuery, widgetTemplate) {
+], function (declare, _WidgetBase, _TemplatedMixin, domClass, domStyle, lang, html, _jQuery, widgetTemplate) {
     "use strict";
     var $ = _jQuery.noConflict(true);
     mxui.dom.addCss(require.toUrl("AudioVideoPlayback/widget/ui/blue.monday/jplayer.blue.monday.css"));
@@ -69,7 +69,7 @@ define([
             } else if (this.mediaURLattr != "") {
                 this.playSource = "widgetAttrUrl";
             }
-            logger.debug(this.id + ".postCreate "+this.playSource);
+            //console.log(this.id + ".postCreate "+this.playSource);
         },
         // mxui.widget._WidgetBase.update is called when context is changed or initialized. Implement to re-render and / or fetch data.
         update: function (obj, callback) {
@@ -109,7 +109,7 @@ define([
             //destroy if need be (allow shitching, between audio, video or deselecting)
             $(this.jpPlayer).jPlayer("destroy");
             var fileName = this.getUrl();                        
-            logger.debug(this.id + "._updateRendering "+fileName);
+            //console.log(this.id + "._updateRendering "+fileName);
             if (fileName !== "") {
                 //file extension
                 var ext = fileName.substr(fileName.lastIndexOf(".") + 1);
