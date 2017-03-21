@@ -26,7 +26,7 @@ define([
     "use strict";
 
     // Declare widget"s prototype.
-    return declare("AudioVideoPlayback.widget.AudioVideoPlaybackEmbed", [_WidgetBase, _TemplatedMixin], {
+    return declare("AudioVideoPlayback.widget.AudioVideoPlaybackEmbed", [ _WidgetBase, _TemplatedMixin ], {
         // _TemplatedMixin will create our dom node using this HTML template.
         templateString: widgetTemplate,
         // Parameters configured in the Modeler.
@@ -54,4 +54,4 @@ define([
         }
     });
 });
-require(["AudioVideoPlayback/widget/AudioVideoPlaybackEmbed"]);
+require([ "AudioVideoPlayback/widget/AudioVideoPlaybackEmbed" ]);

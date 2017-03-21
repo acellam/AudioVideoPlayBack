@@ -1,4 +1,4 @@
-# Audio Video Playback : HTML5/Flash Audio & Video for [Mendix 7](http://mendix.com/)
+# [Audio Video Playback]((https://appstore.home.mendix.com/index.html?v=7#1400594764694)) : HTML5/Flash Audio & Video for [Mendix 7](http://mendix.com/)
 
 ## What is AudioVideoPlayback ?
 

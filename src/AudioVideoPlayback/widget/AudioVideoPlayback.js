@@ -39,7 +39,7 @@ define([
     mxui.dom.addCss(require.toUrl("AudioVideoPlayback/widget/ui/playback.css"));
 
     // Declare widget"s prototype.
-    return declare("AudioVideoPlayback.widget.AudioVideoPlayback", [_WidgetBase, _TemplatedMixin], {
+    return declare("AudioVideoPlayback.widget.AudioVideoPlayback", [ _WidgetBase, _TemplatedMixin ], {
         // _TemplatedMixin will create our dom node using this HTML template.
         templateString: widgetTemplate,
         // Parameters configured in the Modeler.
@@ -260,4 +260,4 @@ define([
     });
 });
 
-require(["AudioVideoPlayback/widget/AudioVideoPlayback"]);
+require([ "AudioVideoPlayback/widget/AudioVideoPlayback" ]);

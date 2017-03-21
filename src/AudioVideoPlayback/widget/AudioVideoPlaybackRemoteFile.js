@@ -22,6 +22,6 @@ define([
     "AudioVideoPlayback/widget/AudioVideoPlayback"
     ], function (declare, AudioVideoPlayback) {
         "use strict";
-        return declare("AudioVideoPlayback.widget.AudioVideoPlaybackRemoteFile", [AudioVideoPlayback], {});
+        return declare("AudioVideoPlayback.widget.AudioVideoPlaybackRemoteFile", [ AudioVideoPlayback ], {});
     });
-require(["AudioVideoPlayback/widget/AudioVideoPlaybackRemoteFile"]);
+require([ "AudioVideoPlayback/widget/AudioVideoPlaybackRemoteFile" ]);
