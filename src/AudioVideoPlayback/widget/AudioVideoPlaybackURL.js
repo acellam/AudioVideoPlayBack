@@ -5,10 +5,10 @@
  AudioVideoPlayback
  ========================
  
- @file      : AudioVideoPlaybackURL.js
- @version   : 3.1
- @author    : Acellam Guy
- @date      : Mon, 23 Nov 2015 17:17:00 GMT
+ @file      : AudioVideoPlayback.js
+ @version   : 3.2.0
+ @author    : Andries Smit, Acellam Guy
+ @date      : Fri, 17 Mar 2017 09:17:00 GMT
  @copyright : Flock Of Birds
  @license   : Apache 2.0 License
  
@@ -17,9 +17,8 @@
  Describe your widget here.
  */
 
-dojo.require("AudioVideoPlayback.widget.AudioVideoPlayback");
-
-require(["dojo/_base/declare"], function (declare) {
-    "use strict";
-    return declare("AudioVideoPlayback.widget.AudioVideoPlaybackURL", [AudioVideoPlayback.widget.AudioVideoPlayback], {});
-});
+define(["dojo/_base/declare","AudioVideoPlayback/widget/AudioVideoPlayback"], function (declare,AudioVideoPlayback) {
+        "use strict";
+        return declare("AudioVideoPlayback.widget.AudioVideoPlaybackURL", [AudioVideoPlayback], {});
+    });
+require(["AudioVideoPlayback/widget/AudioVideoPlaybackURL"]);

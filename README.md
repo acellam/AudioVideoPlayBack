@@ -1,9 +1,8 @@
-# [AudioVideoPlayBack ](https://appstore.home.mendix.com/index.html?v=7#1400594764694) : HTML5/Flash Audio & Video for [Mendix](http://mendix.com/)
+# Audio Video Playback : HTML5/Flash Audio & Video for [Mendix 7](http://mendix.com/)
 
+## What is AudioVideoPlayback ?
 
-## What is AudioVideoPlayBack ?
-
-### AudioVideoPlayBack is a [Mendix](http://mendix.com) widget built on top of [Jplayer ](http://jplayer.org/). The widget allows you to:
+### AudioVideoPlayback is a [Mendix](http://mendix.com) widget built on top of [Jplayer ](http://jplayer.org/). The widget allows you to:
 * **play and control media** files in your mendix app.
 * create a **consistent interface** and experience across all browsers.
 * add **audio** and **video** to your mendix projects.
@@ -22,7 +21,7 @@
 * Jplayer Theme class
 
 
-### AudioVideoPlayBack supports:
+### AudioVideoPlayback supports:
 * HTML5: **mp3, mp4 (AAC/H.264), ogg (Vorbis/Theora), webm (Vorbis/VP8), wav
 * Flash: **mp3, mp4 (AAC/H.264), rtmp, flv
 
