@@ -7,23 +7,23 @@
     <properties>
         <property key="showUserInterface" type="boolean" defaultValue="true">
             <caption>Show User Interface</caption>
-            <category>Behaviour</category>
+            <category>Behavior</category>
             <description></description>
         </property>
         <property key="autoPlay" type="boolean" defaultValue="false">
             <caption>Auto Play</caption>
-            <category>Behaviour</category>
+            <category>Behavior</category>
             <description>Automatic Start play file when loaded</description>
         </property>
         <property key="fullScreen" type="boolean" defaultValue="false">
             <caption>Start Full Screen</caption>
-            <category>Behaviour</category>
+            <category>Behavior</category>
             <description>Start in full screen (video only)</description>
         </property>
                  
         <property key="loop" type="boolean" defaultValue="false">
             <caption>Loop</caption>
-            <category>Behaviour</category>
+            <category>Behavior</category>
             <description>restart when finished playing file</description>
         </property>
         <property key="videoWidth" type="integer" defaultValue="640">
@@ -31,7 +31,7 @@
             <category>Video</category>
             <description>Width of the video in pixels</description>
         </property>
-        <property key="videoHeigth" type="integer" defaultValue="360">
+        <property key="videoHeight" type="integer" defaultValue="360">
             <caption>Height</caption>
             <category>Video</category>
             <description>Height of the video in pixels</description>
@@ -46,7 +46,7 @@
             <category>Display</category>
             <description></description>
         </property>
-        <property key="showAudiocontrol" type="boolean" defaultValue="true">
+        <property key="showAudioControl" type="boolean" defaultValue="true">
             <caption>Audio control</caption>
             <category>Display</category>
             <description></description>

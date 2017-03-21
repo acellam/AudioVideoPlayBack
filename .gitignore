@@ -6,6 +6,7 @@ test/mendix-cache
 test/.classpath
 test/.project
 test/*.log
+node_modules/
 *.launch
 *.tmp
 *.lock

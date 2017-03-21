@@ -1,11 +1,12 @@
-/* disable transistions */
+/* disable transitions */
 .AudioVideoPlayback a {
     transition: initial;
-    color: initial;
+    color: inherit;
     -webkit-transition: initial;
     -moz-transition: initial;
     -o-transition: initial;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 /* correction width of audio player */
