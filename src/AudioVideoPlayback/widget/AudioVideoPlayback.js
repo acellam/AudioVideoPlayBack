@@ -6,9 +6,9 @@
  ========================
  
  @file      : AudioVideoPlayback.js
- @version   : 3.1.0
+ @version   : 3.2.0
  @author    : Andries Smit, Acellam Guy
- @date      : Mon, 23 Nov 2015 17:17:00 GMT
+ @date      : Fri, 17 Mar 2017 09:17:00 GMT
  @copyright : Flock Of Birds
  @license   : Apache 2.0 License
  
@@ -19,17 +19,27 @@
 
 // Required module list. Remove unnecessary modules, you can always get them back from the boilerplate.
 define([
-    "dojo/_base/declare", "mxui/widget/_WidgetBase", "dijit/_TemplatedMixin",
-    "dojo/dom-class", "dojo/dom-style", "dojo/_base/lang", "dojo/html",
-    "AudioVideoPlayback/lib/jquery-1.11.2", "dojo/text!AudioVideoPlayback/widget/template/playback.html", "AudioVideoPlayback/lib/jQueryjPlayer/jquery.jplayer.min"
-], function (declare, _WidgetBase, _TemplatedMixin, domClass, domStyle, lang, html, _jQuery, widgetTemplate) {
+    "dojo/_base/declare", 
+    "mxui/widget/_WidgetBase", 
+    "dijit/_TemplatedMixin",
+
+    "mxui/dom",
+    "dojo/dom-class", 
+    "dojo/dom-style", 
+    "dojo/_base/lang",
+    "dojo/html",
+
+    "AudioVideoPlayback/lib/jquery-1.11.2", 
+    "dojo/text!AudioVideoPlayback/widget/template/AudioVideoPlayback.html", 
+    "AudioVideoPlayback/lib/jQueryjPlayer/jquery.jplayer.min"
+], function (declare, _WidgetBase, _TemplatedMixin, dom, domClass, domStyle, lang, html, _jQuery, widgetTemplate, jplayer) {
     "use strict";
     var $ = _jQuery.noConflict(true);
     mxui.dom.addCss(require.toUrl("AudioVideoPlayback/widget/ui/blue.monday/jplayer.blue.monday.css"));
     mxui.dom.addCss(require.toUrl("AudioVideoPlayback/widget/ui/playback.css"));
 
     // Declare widget"s prototype.
-    return declare("AudioVideoPlayback.widget.AudioVideoPlayback", [_WidgetBase, _TemplatedMixin], {
+    return declare("AudioVideoPlayback.widget.AudioVideoPlayback", [ _WidgetBase, _TemplatedMixin ], {
         // _TemplatedMixin will create our dom node using this HTML template.
         templateString: widgetTemplate,
         // Parameters configured in the Modeler.
@@ -249,6 +259,5 @@ define([
         }
     });
 });
-require(["AudioVideoPlayback/widget/AudioVideoPlayback"], function () {
-    "use strict";
-});
+
+require([ "AudioVideoPlayback/widget/AudioVideoPlayback" ]);
