@@ -2,7 +2,8 @@ test/javasource/
 test/deployment/
 test/resources/
 test/userlib/
-test/mendix-cache
+test/.mendix-cache/
+test/.svn/
 test/.classpath
 test/.project
 test/*.log
