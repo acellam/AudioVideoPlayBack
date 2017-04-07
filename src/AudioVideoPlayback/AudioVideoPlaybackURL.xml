@@ -19,7 +19,6 @@
             <category>Behaviour</category>
             <description>Start in full screen (video only)</description>
         </property>
-                 
         <property key="loop" type="boolean" defaultValue="false">
             <caption>Loop</caption>
             <category>Behaviour</category>
@@ -69,19 +68,16 @@
             <caption>Toggles</caption>
             <category>Display</category>
             <description></description>
-        </property>   
+        </property>
         <property key="mediaURL" type="string" required="true">
             <caption>Media URL</caption>
             <category>URL</category>
             <description>The Media absolute  URL of the video. Use the Embed Video for youtube and vimeo,etc</description>
         </property>
-
         <property key="showFullScreenToggle" type="boolean" defaultValue="true">
             <caption>Enable Full screen</caption>
             <category>Display</category>
             <description></description>
         </property>
-                
-        
     </properties>
 </widget>
