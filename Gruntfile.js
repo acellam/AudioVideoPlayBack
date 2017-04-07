@@ -39,13 +39,15 @@ module.exports = function (grunt) {
             deployment: {
                 files: [
                     { dest: "./test/Mx5.16.1/deployment/web/widgets", cwd: "./out/", src: [ "**/*" ], expand: true },
-                    { dest: "./test/Mx5.21/deployment/web/widgets", cwd: "./out/", src: [ "**/*" ], expand: true }
+                    { dest: "./test/Mx5.21/deployment/web/widgets", cwd: "./out/", src: [ "**/*" ], expand: true },
+                    { dest: "./test/Mx7.0.2/deployment/web/widgets", cwd: "./out/", src: [ "**/*" ], expand: true }
                 ]
             },
             mpks: {
                 files: [
                     { dest: "./test/Mx5.16.1/widgets", cwd: "./dist/" + pkg.version + "/", src: [ pkg.name + ".mpk" ], expand: true },
-                    { dest: "./test/Mx5.21/widgets", cwd: "./dist/" + pkg.version + "/", src: [ pkg.name + ".mpk" ], expand: true }
+                    { dest: "./test/Mx5.21/widgets", cwd: "./dist/" + pkg.version + "/", src: [ pkg.name + ".mpk" ], expand: true },
+                    { dest: "./test/Mx7.0.2/widgets", cwd: "./dist/" + pkg.version + "/", src: [ pkg.name + ".mpk" ], expand: true }
                 ]
             }
         },
@@ -56,7 +58,9 @@ module.exports = function (grunt) {
                 "./test/Mx5.16.1/deployment/web/widgets/" + pkg.name + "/*",
                 "./test/Mx5.16.1/widgets/" + pkg.name + ".mpk",
                 "./test/Mx5.21/deployment/web/widgets/" + pkg.name + "/*",
-                "./test/Mx5.21/widgets/" + pkg.name + ".mpk"
+                "./test/Mx5.21/widgets/" + pkg.name + ".mpk",
+                "./test/Mx7.0.2/deployment/web/widgets/" + pkg.name + "/*",
+                "./test/Mx7.0.2/widgets/" + pkg.name + ".mpk"
             ],
             out: "./out/**/*"
         },
@@ -94,7 +98,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-file-append");
 
-    grunt.registerTask("default", [ "watch" ]);
+    grunt.registerTask("default", [ "clean build", "watch" ]);
     grunt.registerTask("distribute", [ "clean:out", "copy:out", "uglify", "compress", "copy:mpks", "copy:mpks", "copy:deployment" ]);
     grunt.registerTask(
         "clean build",

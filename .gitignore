@@ -1,12 +1,12 @@
-test/javasource/
-test/deployment/
-test/resources/
-test/userlib/
-test/.mendix-cache/
-test/.svn/
-test/.classpath
-test/.project
-test/*.log
+test/*/javasource/
+test/*/deployment/
+test/*/resources/
+test/*/userlib/
+test/*/.mendix-cache/
+test/*/.svn/
+test/*/.classpath
+test/*/.project
+test/*/*.log
 node_modules/
 *.launch
 *.tmp
@@ -14,3 +14,5 @@ node_modules/
 *.bak
 .idea/
 *DS_Store*
+out/
+dist/
